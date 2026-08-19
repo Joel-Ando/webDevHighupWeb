@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+</head>
+<body onload="readData()">
+    
+    <h1 style="text-align: center;">Welcom to Crud Operation</h1>
+
+    <section>
+        <div style="margin-left: auto; margin-right: auto; width: 400px;">
+           <!--input users -->
+            <button id="btn" style="cursor: pointer; background-color: darkgreen; color: white; border: none; border-radius: 3px; padding: 8px;">Add Users</button>
+            <div id="form-section" style="margin-left: 3rem;">
+                <input type="number" id="inptId" hidden><br><br>
+                <input type="text" id="inpt1" placeholder="enter name" style="width: 300px;"><br><br>
+                <input type="email" id="inpt2" placeholder="enter email" style="width: 300px;"><br><br>
+                <input type="number" id="inpt3" placeholder="enter telephone" style="width: 300px;"><br><br>
+                <button type="submit" id="btn2" style="background-color: darkgreen; color: white; border: none; border-radius: 3px; width: 5rem; padding: 5px; cursor: pointer;">Create</button>
+            </div>
+        </div><br><br>
+        <!-- table of all users -->
+            <table border="1" style="margin-left: auto; margin-right: auto; width: 30rem;">
+                
+                    <thead>
+                        <th>Id</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>TelePhone</th>
+                        <th colspan="2">Action</th>
+                       
+                    </thead>
+                <tbody id="tableData">
+                   
+                                 
+                    
+                </tbody>
+             
+            </table>
+    </section>
+     <script src="index.js"></script>
+</body>
+</html>
