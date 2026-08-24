@@ -8,10 +8,34 @@
    
 </head>
 <body onload="readData()">
-    
-    <h1 style="text-align: center;">Welcom to Crud Operation</h1>
 
-    <section>
+
+    <section id="section1">
+        <h1 style="text-align: center;">Signup here</h1>
+        <form style="border-radius: 5px; margin-left: 40%; margin-right: 45%; width: 320px; padding: 15px;  background-color: darkgray;">
+            <input type="number" hidden/><br><br>
+            <input type="text" placeholder="enter name" style="width: 300px; padding: 5px;"/><br><br>
+            <input type="email" placeholder="enter email" style="width: 300px; padding: 5px;"/><br><br>
+            <input type="password" placeholder="enter password" style="width: 300px; padding: 5px;"/><br><br>
+            <input type="password" placeholder="Repeat password" style="width: 300px; padding: 5px;"/><br><br>
+            <button type="button" style="width: 310px; padding: 5px; cursor: pointer; border: 0px; border-radius: 20px; background-color: darkgreen; color: white;">Signup</button><br>
+            <p>have an account?<a href="#" id="sgn">login here</a></p>
+        </form>
+    </section>
+    <section id="section2">
+        <h1 style="text-align: center;">Login here</h1>
+        <form style="border-radius: 5px; margin-left: 40%; margin-right: 45%; width: 320px; padding: 15px;  background-color: darkgray;">
+            <input type="email" placeholder="enter email" style="width: 300px; padding: 5px;"/><br><br>
+            <input type="password" placeholder="enter password" style="width: 300px; padding: 5px;"/><br><br>
+            <button type="button" style="width: 310px; padding: 5px; cursor: pointer; border: 0px; border-radius: 20px; background-color: darkgreen; color: white;">Signup</button><br>
+            <p>Don't have an account?<a href="#" id="lgn">Signup here</a></p>
+        </form>
+    </section>
+    
+    
+    
+    <section id="section3">
+        <h1 style="text-align: center;">Welcom to Crud Operation</h1>
         <div style="margin-left: auto; margin-right: auto; width: 400px;">
            <!--input users -->
             <button id="btn" style="cursor: pointer; background-color: darkgreen; color: white; border: none; border-radius: 3px; padding: 8px;">Add Users</button>

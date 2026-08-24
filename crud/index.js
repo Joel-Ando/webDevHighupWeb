@@ -11,6 +11,20 @@
  */
 
 $(document).ready(() => {
+    // hide section 2
+    $("#section2").hide()
+    // hide section 3
+    $("#section3").hide()
+
+    //toggle between login and signup
+    $("#sgn").click(()=>{
+        $("#section2").show()
+        $("#section1").hide()
+    })
+    $("#lgn").click(()=>{
+        $("#section1").show()
+        $("#section2").hide()
+    })
     $("#form-section").hide()//hides inputs fields
     $("#btn").click(()=>{
         $("#form-section").toggle()//toggle inputs fields
@@ -102,7 +116,7 @@ if(input1 === "" || input2 === "" || input3 === ""){
 
 const btn2 = document.getElementById("btn2")
 
-btn2.addEventListener("click", (id) => {
+btn2.addEventListener("click", () => {
 const currentEditId = document.getElementById("inptId").value;
 
     
