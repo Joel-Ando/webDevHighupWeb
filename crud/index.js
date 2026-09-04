@@ -33,6 +33,129 @@ $(document).ready(() => {
 })
 
 
+
+//real time validating input field password
+function confirmPass(){
+    let password = document.getElementById("inptFld2").value
+    let repeatPassword = document.getElementById("inptFld3").value
+    let conFirm = document.getElementById("confirm")
+    
+    if(repeatPassword === password){
+        conFirm.textContent ="password match"
+        conFirm.style.display = "block"
+        conFirm.style.color = "green"
+    }else{
+        conFirm.textContent ="password do not match"
+        conFirm.style.display = "block"
+        conFirm.style.color = "red"
+    }
+}
+
+// SIGNUP LOGIC
+let signUp = document.getElementById("signup")
+
+signUp.addEventListener("click", ()=>{
+    let name = document.getElementById("inptFld").value
+    let email = document.getElementById("inptFld1").value
+    let repeatPass = document.getElementById("inptFld3").value
+
+    if(name === "" || email === "" || repeatPass === ""){
+         alert("all input fields must be filled")
+    }else{
+   
+            let signUplist = JSON.parse(localStorage.getItem("user")) || []; 
+           
+            let nextId = 1; 
+                if (signUplist.length > 0) { 
+                    // Find the highest ID currently in the list, then add 1 
+                    const highestId = Math.max(...signUplist.map(user => user.id)); 
+                    nextId = highestId + 1; 
+                } 
+
+            const users = { 
+                id: nextId, 
+                name: name, 
+                email: email, 
+                password: repeatPass 
+            };
+
+
+        // 1. Check if the name already exists in the array
+        const nameExists = signUplist.some(user => user.name === users.name);
+
+        // 2. Check if the email already exists in the array
+        const emailExists = signUplist.some(user => user.email === users.email);
+
+        // 3. Run validation logic
+        if (nameExists) { 
+            alert("name already taken"); 
+            return
+        } else if (emailExists) { 
+            alert("email already taken"); 
+            return
+        } else { 
+            alert("everything good");
+            // 4. Save the new user to the list and update localStorage
+            signUplist.push(users)
+            localStorage.setItem("user", JSON.stringify(signUplist))
+            document.getElementById("section2").style.display = "block"
+            document.getElementById("section1").style.display = "none"
+
+        }
+  
+                document.getElementById("inptFld").value = ""
+                document.getElementById("inptFld1").value = ""
+                document.getElementById("inptFld2").value = ""
+                document.getElementById("inptFld3").value = ""
+            
+        }
+})  
+
+
+//LOGIN LOGIC
+
+let login = document.getElementById("login")
+
+login.addEventListener("click", ()=>{
+    let inpEmail = document.getElementById("eml").value
+    let inpPass = document.getElementById("pas").value
+
+    if(inpEmail === "" || inpPass === ""){
+        alert("all inputField must be filled")
+    }else{
+        let logInlist = JSON.parse(localStorage.getItem("user")) || []; 
+
+         const users = { 
+                email: inpEmail, 
+                password: inpPass
+            };
+
+
+         
+            
+
+          // 2. Check if the email already exists in the array
+             const passExists = logInlist.some(user => user.email === users.email && user.password === users.password);
+
+            if(passExists){
+                const userFound = logInlist.find(user => 
+        user.email === users.email && user.password === users.password
+    );
+                document.getElementById("HD").innerHTML = `Welcome ${userFound.name}`
+                document.getElementById("section3").style.display = "block"
+                document.getElementById("section2").style.display = "none"
+            }else{
+                alert("wrong cridentials")
+                return
+            }
+
+    }
+
+})
+   
+
+
+
 // clearing input fields
 
 function clearField(){

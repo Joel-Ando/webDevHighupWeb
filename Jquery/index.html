@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index1.js"></script>
+    <script src="index2.js"></script>
+    <script src="index3.js"></script>
+</head>
+<body>
+    <button>click me</button>
+    <!-- <button id="btn1">click studies</button> -->
+    <button id="btn2">click </button>
+    <button id="btn3">show test2 </button>
+    <h1 id="test">hello welcome to jquery</h1>
+    <!-- <p>hello welcome to jquery</p>
+    <p id="p1">hello welcome to jquery studies</p> -->
+    <p id="test1"></p>
+    <br>
+    <br>
+    <br>
+
+    <section style="background-color: darkgray; width: 300px; margin: auto;">
+        <h2 id="txt" style="border-bottom: 3px solid white; text-align: center; cursor:pointer">click to see more</h2>
+        <div style="background-color: coral;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                Tempore quo blanditiis repellat nesciunt dolores tempora pariatur doloremque libero minima a,
+                <br> accusamus odio sequi animi reiciendis molestias porro non explicabo at?
+        </div>
+    </section>
+
+
+
+    <script>
+         $(document).ready(function(){
+        //     //element selector
+        //     $("button").click(function(){
+        //         $("h1").hide()
+                
+        //     })
+        //     $("#btn1").click(function(){
+        //         // $("#p1").hide()
+        //         $("p:first").hide()
+        //     })
+        // /*hide() show()*/
+        // $("#txt").click(function(){
+        //              $("div").hide(500)     
+        // })
+        // //show()
+        // $("#txt").click(function(){
+        //              $("div").show(500)     
+        // })
+        // //toggle()
+        // $("#txt").click(function(){
+        //              $("div").toggle(500)     
+        // })
+
+        /*fadein fadeout fadetoggle fadeTo*/
+
+        // $("#txt").click(function(){
+        //     $("div").fadeOut()  
+        
+        // })
+        //fadein()
+        // $("#txt").click(function(){
+        //     $("div").fadeIn()  
+        
+        // })
+        //fadetoggle()
+        // $("#txt").click(function(){
+        //     $("div").fadeToggle(2000)  
+        
+        // })
+        //fadeTo()
+        // $("#txt").click(function(){
+        //     $("div").fadeTo("slow", 0.5)  
+        
+        // })
+        /*SLIDE*/
+        //slideUp()
+        // $("#txt").click(function(){
+        //     $("div").slideUp()  
+        
+        // })
+        //slideDown()
+        // $("#txt").click(function(){
+        //     $("div").slidedown()  
+        
+        // })
+        //slidetoggle()
+        // $("#txt").click(function(){
+        //     $("div").slideToggle()  
+        
+        // })
+        $("#btn3").click(function(){
+
+            let txt1 = $("#test").text()
+             $("#test1").append(txt1);     
+        })
+           
+
+        })
+
+    </script>
+    
+</body>
+</html>

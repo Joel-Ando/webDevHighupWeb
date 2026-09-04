@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+    <script>
+        // let file = "text.txt"
+    //    fetch(file).then(function(response){
+    //     return response.text()
+    //    }).then(function(data){
+    //     myDisplay(data)
+    //    })
+
+    //    function myDisplay(text){
+    //     document.getElementById("demo").innerHTML = text
+    //    }
+
+       //using arrow function
+    //    fetch(file)
+    //     .then(response => response.text())
+    //     .then(data => myDisplay(data))
+    //    function myDisplay(text){
+    //     document.getElementById("demo").innerHTML = text
+    //    }
+
+       // using asyn awaits function
+
+       async function loadText(file){
+        const response = await fetch(file)
+        const finalResponse = await response.text()
+        myDisplay(finalResponse)
+
+       }
+       loadText("text.txt")
+       function myDisplay(text){
+        document.getElementById("demo").innerHTML = text
+       }
+
+
+    </script>
+</body>
+</html>

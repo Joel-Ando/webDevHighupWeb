@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <button id="btn1">simple text</button>
+    <button id="btn2">Json text</button>
+    <button id="btn3">API request</button>
+    <h3 id="stxt"></h3>
+    <div id="div1">
+
+    </div>    
+    <script>
+        // requesting simple text, and Api using Ajax
+        let textBtn = document.getElementById("btn1")
+        textBtn.addEventListener('click', () => {
+            //creat an ajax request
+            let xhr = new XMLHttpRequest()
+
+            console.log(xhr)
+            //prepare request
+            xhr.open('GET', 'text.txt', true)
+            //send the request
+            xhr.send()
+            //process request
+            xhr.onload = () => {
+                if(xhr.status === 200){
+                    let data = xhr.responseText
+                    myDisplay(data)
+                }
+            }
+        })
+
+        let myDisplay = (data) =>{
+            document.getElementById("stxt").innerHTML = data
+        }
+
+        //requesting  json text,
+
+        let jsonBtn = document.getElementById("btn2")
+        jsonBtn.addEventListener('click', () => {
+            //creat an ajax request
+            let xhr = new XMLHttpRequest()
+            //prepare request
+            xhr.open('GET', 'file.json', true)
+            //send the request
+            xhr.send()
+            //process request
+            xhr.onload = () => {
+                if(xhr.status === 200){
+                    let data = xhr.responseText
+                    let mobile = JSON.parse(data)
+                    myDisplay1(mobile)
+                }
+            }
+        })
+
+        let myDisplay1 = (mobile) =>{
+            let jsonreqObject =" "
+            jsonreqObject = `<ul>
+                <li>ID: ${mobile.id}</li>
+                <li>MODEL: ${mobile.model}</li>
+                <li>NAME: ${mobile.name}</li>
+                <li>COLOR: ${mobile.color}</li>
+                <li>PRICE: ${mobile.price}</li>
+                
+                </ul>`
+                document.getElementById("div1").innerHTML = jsonreqObject
+        }
+
+        //Requestion API
+
+         let jsonBtn3 = document.getElementById("btn3")
+        jsonBtn3.addEventListener('click', () => {
+            //creat an ajax request
+            let xhr = new XMLHttpRequest()
+            //prepare request
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true)
+            //send the request
+            xhr.send()
+            //process request
+            xhr.onload = () => {
+                if(xhr.status === 200){
+                    let data = xhr.responseText
+                      let mobile = JSON.parse(data)
+                    // console.log(data)
+                    
+                   
+                }
+            }
+        })
+
+        //  let myDisplay2 = (result) =>{
+        //     let jsonreqObject =" "
+        //     jsonreqObject = `<ul>
+        //         <li>ID: ${result.id}</li>
+        //         <li>MODEL: ${result.model}</li>
+        //         <li>NAME: ${result.name}</li>
+        //         <li>COLOR: ${result.color}</li>
+        //         <li>PRICE: ${result.price}</li>
+                
+        //         </ul>`
+        //         document.getElementById("div1").innerHTML = jsonreqObject
+        // }
+
+    </script>
+</body>
+</html>
